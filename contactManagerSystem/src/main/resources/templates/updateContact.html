@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <title>Update Existing Contact</title>
+  <link rel="stylesheet" type="text/css" href="" th:href="@{/style.css}" />
+</head>
+
+<body>
+  <div class="login-root">
+    <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+        
+        <div class="box-root padding-top--6 padding-bottom--24 flex-flex flex-justifyContent--center">
+          <h1>Update Contact</h1>
+        </div>
+
+        <div class="formbg-outer">
+          <div class="formbg">
+
+            <div class="formbg-inner padding-horizontal--48">
+
+              <form id="stripe-login" action = "" method = "post" th:action="@{/updateContact(contactEmail=${contactEmail})}" th:object="${user}">
+                
+                <div class="field padding-bottom--24">
+                  <label>Name</label>
+                  <input type="text" name="name" th:value="${user.name}">
+                </div>
+                
+                <div class="field padding-bottom--24">
+                  <label>Contact No.</label>
+                  <input type="text" name="contact" th:value="${user.contact}">
+                </div>
+                
+                <div class="field padding-bottom--24">
+                  <label>City</label>
+                  <input type="text" name="city" th:value="${user.city}">
+                </div>
+                
+                <div class="field padding-bottom--24">
+                  <label>Password</label>
+                  <input type="text" name="password" th:value="${user.password}">
+                </div>
+                
+                <div class="field padding-bottom--24">
+                  <input type="submit" value="UPDATE CONTACT">
+                </div>
+                
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+  </div>
+</body>
+
+</html>
